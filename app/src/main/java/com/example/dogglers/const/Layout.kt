@@ -13,28 +13,15 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-buildscript {
-    ext.kotlin_version = "1.6.21"
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+package com.example.dogglers.const
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
+/**
+ * Static object to hold constant values to be associated with a layout.
+ * These values are intended to be passed into the [DogCardAdapter] to determine the type of layout
+ * to inflate.
+ */
+object Layout {
+    val VERTICAL = 1
+    val HORIZONTAL = 2
+    val GRID = 3
 }
